@@ -1,0 +1,87 @@
+/* General Reset and Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+
+
+/* Main Table Styling */
+main.table {
+  margin-left: 300px;
+  width: 82vw;
+  height: 90vh;
+  background-color: #fff5;
+  overflow-x: auto; /* Ensures table can scroll horizontally if needed */
+}
+
+/* Table Styling with Equal Column Widths */
+table, th, td {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%; /* Ensure the table spans the available space */
+  padding: 8px;
+  font-size: 20px; /* Larger text */
+  font-weight: bold; /* Bold text */
+  text-align: center;
+}
+
+table th, table td {
+  width: 25%; /* Equal width for each column */
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  font-size: 20px; /* Larger text for headers */
+}
+
+/* Style for 'No banana types found' row */
+td[colspan="4"] {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Adjust Add Product Button at the Bottom */
+.add-button {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px; /* Spacing from the table */
+}
+
+/* Green Button Styling */
+.add-product-button {
+  background-color: #04AA6D; /* Green background */
+  color: white;
+  font-size: 20px; /* Enlarged text */
+  font-weight: bold; /* Bold text */
+  padding: 10px 20px; /* Larger button size */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-product-button:hover {
+  background-color: #037d4f; /* Darker green on hover */
+}
+

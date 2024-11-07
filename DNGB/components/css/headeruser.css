@@ -1,0 +1,67 @@
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Align with sidebar width */
+    width: calc(100% - 250px); /* Full width minus sidebar */
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white for modern look */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+}
+
+.header-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header-links li {
+    margin: 0;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.header-links a:hover {
+    color: #FFBF00; /* Match the sidebar color for hover effect */
+}
+
+.logout-button {
+    background-color: transparent;
+    border: 2px solid #FFBF00;
+    color: #FFBF00;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #FFBF00;
+    color: white;
+}
+
+/* Layout adjustments for content below header */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 80px; /* Offset for the fixed header */
+}
