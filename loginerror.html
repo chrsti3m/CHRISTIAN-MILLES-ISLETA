@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+             .layout {
+            width: 100%;
+            display: grid;
+            grid:
+                "header header header" auto
+        "leftSide main ." 1fr
+        "footer footer footer" auto
+        / auto 1fr auto;
+    gap: 8px;
+    min-height: 100vh; 
+        }
+
+        .header {
+            grid-area: header;
+            background-color: gold; /* Gold background */
+            padding: 10px;
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+
+        .header img {
+            height: 60px; /* Adjust height as needed */
+            width: auto; /* Keep aspect ratio */
+            margin-right: 20px; /* Reduce space between image and text */
+        }
+
+        .header-text {
+            font-size: 25px; /* Font size for header text */
+            font-weight: bold; /* Make header text bold */
+            color: black; /* Text color for header text */
+            margin-right: auto; /* Push links to the right */
+        }
+
+        .header-links {
+
+            list-style: none; /* Remove bullet points */
+            display: flex; /* Align links horizontally */
+            gap: 50px; /* Increased space between links */
+            margin: 0; /* Remove default margin */
+            padding: 10px; /* Remove default padding */
+        }
+
+        .header-links a {
+            text-decoration: none; /* Remove underline */
+            color: black; /* Link color */
+            font-weight: bold; /* Make link text bold */
+            font-size: 20px; /* Larger font size for links */
+        }
+
+        .leftSide {
+   grid-area: leftSide;
+    background-color: gold; /* Gold background for the left side */
+    padding: 20px; /* Padding inside the left side */
+    width: 280px; /* Fixed width for the left side */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Remove scrolling */
+}
+
+.sidebar-links {
+    list-style-type: none;  /* Remove the bullet points */
+    padding: 0;             /* Remove default padding */
+    margin: 0;              /* Remove default margin */
+}
+
+.sidebar-links a {
+    display: block;
+    color: black;           /* Change the text color to black */
+    font-weight: bold;      /* Make the text bold */
+    text-decoration: none;
+    font-size: 30px;  
+     padding: 20px 0;        /* Add vertical spacing between the links */
+    border-bottom: 1px solid lightgray;/* Remove the underline */
+}
+
+.sidebar-links a:hover {
+    color: darkgray;        /* Optionally, change the color on hover */
+    text-decoration: underline; /* Optionally, add underline on hover */
+}
+
+
+        .main {
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: gold; /* Gold background */
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px; /* Make footer text bold */
+        }
+
+     
+        .login-container {
+            background-color: gold; /* Gold background for the box */
+            border: 1px solid #ffd700; /* Border around the box */
+            border-radius: 80px; /* Rounded corners */
+            padding: 60px; /* Increased padding inside the box */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            width: 150%; /* Full width within the main area */
+            max-width: 500px; /* Maximum width of the box */
+        }
+
+        .login-container h2 {
+            color: black; /* Text color for the header */
+            font-weight: bold; /* Make header bold */
+            font-size: 25px; /* Larger font size for header */
+        }
+
+        .form-group label {
+            font-weight: bold; /* Make label bold */
+            color: black; /* Label text color */
+            font-size: 20px; /* Larger font size for labels */
+        }
+
+        .form-control {
+            border-radius: 20px; /* Rounded corners for inputs */
+            padding: 20px; /* Add more padding */
+            font-size: 20px; /* Larger font size for inputs */
+        }
+
+        .btn-signin {
+            display: block; /* Block display to center */
+            margin: 20px auto; /* Center horizontally */
+            font-size: 20px; /* Larger button text */
+            background-color: green; /* Green button color */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+        }
+
+        .btn-signin:hover {
+            background-color: green; /* Darker green on hover */
+        }
+
+        .btn {
+            font-weight: bold; /* Bold button text */
+            font-size: 18px; /* Larger button text */
+            padding: 12px 20px; /* More padding for buttons */
+        }
+
+        input[type="password"]::-ms-reveal, 
+input[type="password"]::-ms-clear, 
+input[type="password"]::-webkit-clear-button, 
+input[type="password"]::-webkit-inner-spin-button, 
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+ input[type="radio"] {
+            transform: scale(1.5); /* Adjust the scale value to make it larger or smaller */
+            margin-right: 10px;    /* Adds spacing between the radio button and label */
+        }
+
+     </style>
+</head>
+<body>
+    <section class="layout">
+        <div class="header">
+            <img src="components/images/nana.png" alt="nana" class="header-logo"> <!-- Replace with your image path -->
+            <div class="header-text">D&G</div>
+            <ul class="header-links">
+                 <li><a href="#about">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="login-container"> <!-- Box layout for login -->
+                <h2 class="text-center">LOG IN</h2>
+                <form action="login.php" method="POST" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address.">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                        <br>
+                        <input type="radio" id="showPassword" name="togglePassword" onclick="togglePasswordVisibility(true)">
+                        <label for="showPassword">Show Password</label>
+                    </div>
+                    <p style="color: darkred; font-weight: bold; font-size: 1.5em; font-size: 20px; text-align: center; ">Email & Password is Incorrect!</p>
+                    <a href="forgot_password.php" style="color: black; font-size: 1.5em; font-size: 17px;">Forgot Password</a>
+                    <button type="submit" class="btn btn-signin">Log In</button> <!-- Centered sign-in button -->
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 D&G BANANA DEALER. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let isPasswordVisible = false; // Track password visibility state
+
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            isPasswordVisible = !isPasswordVisible; // Toggle the visibility state
+
+            if (isPasswordVisible) {
+                passwordField.type = "text"; // Show password
+                document.getElementById("togglePassword").nextElementSibling.textContent = "Hide Password"; // Change label
+            } else {
+                passwordField.type = "password"; // Hide password
+                document.getElementById("togglePassword").nextElementSibling.textContent = "Show Password"; // Change label
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const form = event.currentTarget;
+            
+            // Check form validity
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            form.classList.add('was-validated');
+        });
+    </script>
+</body>
+</html>
